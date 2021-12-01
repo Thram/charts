@@ -22,17 +22,6 @@ entries:
     urls:
     - https://github.com/Thram/helm-charts/releases/download/drone-server-0.1.0/drone-server-0.1.0.tgz
     version: 0.1.0
-  gitea-basic:
-  - apiVersion: v2
-    appVersion: 1.15.6
-    created: "2021-12-01T05:26:29.671274249Z"
-    description: A Helm chart for Kubernetes
-    digest: 56ee42332ccb09da68f363a72b60897146d48589703754ffb974fba7b39be9eb
-    name: gitea-basic
-    type: application
-    urls:
-    - https://github.com/Thram/helm-charts/releases/download/gitea-basic-0.1.0/gitea-basic-0.1.0.tgz
-    version: 0.1.0
   gitea-sqlite:
   - apiVersion: v2
     appVersion: 1.15.6
