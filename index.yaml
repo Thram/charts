@@ -33,6 +33,17 @@ entries:
     urls:
     - https://github.com/Thram/helm-charts/releases/download/gitea-basic-0.1.0/gitea-basic-0.1.0.tgz
     version: 0.1.0
+  gitea-sqlite:
+  - apiVersion: v2
+    appVersion: 1.15.6
+    created: "2021-12-01T05:29:12.953503362Z"
+    description: A Helm chart for Kubernetes
+    digest: d9799ecf438c481d5f9c8d26eb50698a2ef606f0ac78387412a38831adc118d3
+    name: gitea-sqlite
+    type: application
+    urls:
+    - https://github.com/Thram/helm-charts/releases/download/gitea-sqlite-0.1.0/gitea-sqlite-0.1.0.tgz
+    version: 0.1.0
   minecraft:
   - apiVersion: v2
     appVersion: latest
