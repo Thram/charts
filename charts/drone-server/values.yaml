@@ -12,26 +12,11 @@ image:
 
 env:
   DRONE_GITEA_SERVER: http://gitea.192.168.0.120.nip.io/ 
-  DRONE_GITEA_CLIENT_ID: 6b51bf1b-4d87-4490-972d-4bb6fb1222bb
-  DRONE_GITEA_CLIENT_SECRET: SOTx7FAE8kPvB7VPkVdUlzfybvSy5oOheRJZZJukUb00
+  DRONE_GITEA_CLIENT_ID: 
+  DRONE_GITEA_CLIENT_SECRET: 
   DRONE_RPC_SECRET: super-duper-secret 
   DRONE_SERVER_HOST: drone.192.168.0.120.nip.io
   DRONE_SERVER_PROTO: http
-
-# docker run \
-#   --volume=/var/lib/drone:/data \
-#   --env=DRONE_GITEA_SERVER=http://gitea.192.168.0.120.nip.io/ \
-#   --env=DRONE_GITEA_CLIENT_ID=29dbb228-2008-4920-88bb-9d6ab405a178 \
-#   --env=DRONE_GITEA_CLIENT_SECRET=NZVMwOOteC01ZzRdTJgUnuIyqcdBlNvRNwYOzdWqpMJE \
-#   --env=DRONE_RPC_SECRET=super-duper-secret \
-#   --env=DRONE_SERVER_HOST=http://drone.192.168.0.120.nip.io/
-#   --env=DRONE_SERVER_PROTO=https \
-#   --publish=80:80 \
-#   --publish=443:443 \
-#   --restart=always \
-#   --detach=true \
-#   --name=drone \
-#   drone/drone:2
 
 imagePullSecrets: []
 nameOverride: ""
@@ -61,23 +46,23 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80
 
 ingress:
-  enabled: false
+  enabled: true
   className: ""
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
+    # cert-manager.io/issuer: "letsencrypt-staging"
   hosts:
-    - host: chart-example.local
+    - host: drone.192.168.0.120.nip.io
       paths:
         - path: /
-          pathType: ImplementationSpecific
-  tls: []
-  #  - secretName: chart-example-tls
+          pathType: Prefix
+  tls:  []
+  #  - secretName: drone-tls
   #    hosts:
-  #      - chart-example.local
+  #      - drone.192.168.0.120.nip.io
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
