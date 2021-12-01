@@ -44,15 +44,4 @@ entries:
     urls:
     - https://github.com/Thram/helm-charts/releases/download/minecraft-chart-0.1.0/minecraft-chart-0.1.0.tgz
     version: 0.1.0
-  test:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2021-12-01T05:06:11.789651012Z"
-    description: A Helm chart for Kubernetes
-    digest: f5ad67ab09e690f4705a654d243d9e860132a2f2b23fca96fd8f32057efa71e5
-    name: test
-    type: application
-    urls:
-    - https://github.com/Thram/helm-charts/releases/download/test-0.1.0/test-0.1.0.tgz
-    version: 0.1.0
 generated: "2021-12-01T05:06:11.586816977Z"
