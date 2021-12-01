@@ -11,17 +11,6 @@ entries:
     urls:
     - https://github.com/Thram/helm-charts/releases/download/drone-runner-0.1.0/drone-runner-0.1.0.tgz
     version: 0.1.0
-  drone-runner-chart:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2021-12-01T05:16:37.476841699Z"
-    description: A Helm chart for Kubernetes
-    digest: b957b8d065e5ba6a4303fadfb8c094a45ff9ee1aa96799f3087da4518bdd681e
-    name: drone-runner-chart
-    type: application
-    urls:
-    - https://github.com/Thram/helm-charts/releases/download/drone-runner-chart-0.1.0/drone-runner-chart-0.1.0.tgz
-    version: 0.1.0
   drone-server:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -32,17 +21,6 @@ entries:
     type: application
     urls:
     - https://github.com/Thram/helm-charts/releases/download/drone-server-0.1.0/drone-server-0.1.0.tgz
-    version: 0.1.0
-  drone-server-chart:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2021-12-01T05:16:37.585317022Z"
-    description: A Helm chart for Kubernetes
-    digest: 829d944c978c840d4ec2643a073d9e1229d353999050c739d35e69da95f1192a
-    name: drone-server-chart
-    type: application
-    urls:
-    - https://github.com/Thram/helm-charts/releases/download/drone-server-chart-0.1.0/drone-server-chart-0.1.0.tgz
     version: 0.1.0
   gitea-basic:
   - apiVersion: v2
@@ -55,17 +33,6 @@ entries:
     urls:
     - https://github.com/Thram/helm-charts/releases/download/gitea-basic-0.1.0/gitea-basic-0.1.0.tgz
     version: 0.1.0
-  gitea-basic-chart:
-  - apiVersion: v2
-    appVersion: 1.15.6
-    created: "2021-12-01T05:16:37.687729666Z"
-    description: A Helm chart for Kubernetes
-    digest: b7aa5f98f58ba7f9d90432b52d536302af46df6ad1160b6b9d6af2ee837fa989
-    name: gitea-basic-chart
-    type: application
-    urls:
-    - https://github.com/Thram/helm-charts/releases/download/gitea-basic-chart-0.1.0/gitea-basic-chart-0.1.0.tgz
-    version: 0.1.0
   minecraft:
   - apiVersion: v2
     appVersion: latest
@@ -76,16 +43,5 @@ entries:
     type: application
     urls:
     - https://github.com/Thram/helm-charts/releases/download/minecraft-0.1.0/minecraft-0.1.0.tgz
-    version: 0.1.0
-  minecraft-chart:
-  - apiVersion: v2
-    appVersion: latest
-    created: "2021-12-01T05:16:37.813050411Z"
-    description: A Helm chart for Kubernetes
-    digest: 19c1ba5f2111be8a34f4bae854b406c3976eb896f318177527083f82fa50a7e3
-    name: minecraft-chart
-    type: application
-    urls:
-    - https://github.com/Thram/helm-charts/releases/download/minecraft-chart-0.1.0/minecraft-chart-0.1.0.tgz
     version: 0.1.0
 generated: "2021-12-01T05:06:11.586816977Z"
