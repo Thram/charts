@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "gitea-basic-chart.fullname" . }}
+  name: {{ include "gitea-basic.fullname" . }}
   labels:
-    {{- include "gitea-basic-chart.labels" . | nindent 4 }}
+    {{- include "gitea-basic.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "gitea-basic-chart.selectorLabels" . | nindent 4 }}
+    {{- include "gitea-basic.selectorLabels" . | nindent 4 }}

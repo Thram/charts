@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "drone-runner-chart.name" -}}
+{{- define "drone-runner.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "drone-runner-chart.fullname" -}}
+{{- define "drone-runner.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "drone-runner-chart.chart" -}}
+{{- define "drone-runner.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "drone-runner-chart.labels" -}}
-helm.sh/chart: {{ include "drone-runner-chart.chart" . }}
-{{ include "drone-runner-chart.selectorLabels" . }}
+{{- define "drone-runner.labels" -}}
+helm.sh/chart: {{ include "drone-runner.chart" . }}
+{{ include "drone-runner.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "drone-runner-chart.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "drone-runner-chart.name" . }}
+{{- define "drone-runner.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "drone-runner.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "drone-runner-chart.serviceAccountName" -}}
+{{- define "drone-runner.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "drone-runner-chart.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "drone-runner.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

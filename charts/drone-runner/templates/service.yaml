@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "drone-runner-chart.fullname" . }}
+  name: {{ include "drone-runner.fullname" . }}
   labels:
-    {{- include "drone-runner-chart.labels" . | nindent 4 }}
+    {{- include "drone-runner.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "drone-runner-chart.selectorLabels" . | nindent 4 }}
+    {{- include "drone-runner.selectorLabels" . | nindent 4 }}

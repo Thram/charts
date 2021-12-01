@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "drone-server-chart.fullname" . }}
+  name: {{ include "drone-server.fullname" . }}
   labels:
-    {{- include "drone-server-chart.labels" . | nindent 4 }}
+    {{- include "drone-server.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "drone-server-chart.fullname" . }}
+    name: {{ include "drone-server.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

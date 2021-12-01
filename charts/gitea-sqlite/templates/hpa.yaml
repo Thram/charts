@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "gitea-basic-chart.fullname" . }}
+  name: {{ include "gitea-basic.fullname" . }}
   labels:
-    {{- include "gitea-basic-chart.labels" . | nindent 4 }}
+    {{- include "gitea-basic.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "gitea-basic-chart.fullname" . }}
+    name: {{ include "gitea-basic.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

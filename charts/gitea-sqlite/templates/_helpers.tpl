@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "gitea-basic-chart.name" -}}
+{{- define "gitea-basic.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "gitea-basic-chart.fullname" -}}
+{{- define "gitea-basic.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "gitea-basic-chart.chart" -}}
+{{- define "gitea-basic.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "gitea-basic-chart.labels" -}}
-helm.sh/chart: {{ include "gitea-basic-chart.chart" . }}
-{{ include "gitea-basic-chart.selectorLabels" . }}
+{{- define "gitea-basic.labels" -}}
+helm.sh/chart: {{ include "gitea-basic.chart" . }}
+{{ include "gitea-basic.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "gitea-basic-chart.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "gitea-basic-chart.name" . }}
+{{- define "gitea-basic.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "gitea-basic.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "gitea-basic-chart.serviceAccountName" -}}
+{{- define "gitea-basic.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "gitea-basic-chart.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "gitea-basic.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

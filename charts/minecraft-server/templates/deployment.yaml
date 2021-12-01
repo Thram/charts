@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "minecraft-chart.fullname" . }}
+  name: {{ include "minecraft.fullname" . }}
   labels:
-    {{- include "minecraft-chart.labels" . | nindent 4 }}
+    {{- include "minecraft.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "minecraft-chart.selectorLabels" . | nindent 6 }}
+      {{- include "minecraft.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "minecraft-chart.selectorLabels" . | nindent 8 }}
+        {{- include "minecraft.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "minecraft-chart.serviceAccountName" . }}
+      serviceAccountName: {{ include "minecraft.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
