@@ -14,6 +14,16 @@ entries:
   drone-server:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-12-01T06:00:47.246829802Z"
+    description: A Helm chart for Kubernetes
+    digest: e9aace3e640870292a573b51b1f8715a7c326561c17bcee589d60c76eb39bb02
+    name: drone-server
+    type: application
+    urls:
+    - https://github.com/Thram/helm-charts/releases/download/drone-server-0.1.1/drone-server-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-12-01T05:26:29.562846795Z"
     description: A Helm chart for Kubernetes
     digest: 86ad5d48f09f1dfa5b8a2dc88385fead08f06d3ed26b640457914e5ee217c80d
