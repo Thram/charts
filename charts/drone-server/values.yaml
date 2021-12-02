@@ -11,12 +11,12 @@ image:
   tag: "2"
 
 env:
-  DRONE_GITEA_SERVER: http://gitea.192.168.0.120.nip.io/ 
-  DRONE_GITEA_CLIENT_ID: 
-  DRONE_GITEA_CLIENT_SECRET: 
+  DRONE_GITEA_SERVER: https://gitea.192.168.0.120.nip.io/ 
+  DRONE_GITEA_CLIENT_ID: 6b51bf1b-4d87-4490-972d-4bb6fb1222bb
+  DRONE_GITEA_CLIENT_SECRET: 8HCeTn0RKgjNtrMqF8zGn5veas9NkdJpEsVkxgqvL6cR
   DRONE_RPC_SECRET: super-duper-secret 
   DRONE_SERVER_HOST: drone.192.168.0.120.nip.io
-  DRONE_SERVER_PROTO: http
+  DRONE_SERVER_PROTO: https
 
 imagePullSecrets: []
 nameOverride: ""
@@ -46,6 +46,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
+  port: 80
 
 ingress:
   enabled: true

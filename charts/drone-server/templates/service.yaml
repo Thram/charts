@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "drone-server.fullname" . }}
+  name: {{ include "drone-server.fullname" . }}-svc
   labels:
     {{- include "drone-server.labels" . | nindent 4 }}
 spec:

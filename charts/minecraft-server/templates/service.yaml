@@ -5,11 +5,8 @@ metadata:
   labels:
     {{- include "minecraft.labels" . | nindent 4 }}
 spec:
-  type: {{ .Values.service.type }}
+  type: NodePort
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: http
+    - port: 25565
   selector:
     {{- include "minecraft.selectorLabels" . | nindent 4 }}
